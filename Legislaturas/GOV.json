@@ -1,0 +1,103 @@
+{
+    "membros": [
+        {
+            "nome": "José Sócrates",
+            "cargos": [
+                "Primeiro-Ministro"
+            ]
+        },
+        {
+            "nome": "Luís Amado",
+            "cargos": [
+                "Ministro de Estado",
+                "Ministro dos Negócios Estrangeiros"
+            ]
+        },
+        {
+            "nome": "Pedro Silva Pereira",
+            "cargos": [
+                "Ministro da Presidência"
+            ]
+        },
+        {
+            "nome": "Rui Pereira",
+            "cargos": [
+                "Ministro da Administração Interna"
+            ]
+        },
+        {
+            "nome": "Francisco Nunes Correia",
+            "cargos": [
+                "Ministro do Ambiente, do Ordenamento do Território e do Desenvolvimento Regional"
+            ]
+        },
+        {
+            "nome": "Mário Lino",
+            "cargos": [
+                "Ministro das Obras Públicas, Transportes e Comunicações"
+            ]
+        },
+        {
+            "nome": "Ana Jorge",
+            "cargos": [
+                "Ministra da Saúde"
+            ]
+        },
+        {
+            "nome": "Mariano Gago",
+            "cargos": [
+                "Ministro da Ciência, Tecnologia e Ensino Superior"
+            ]
+        },
+        {
+            "nome": "Augusto Santos Silva",
+            "cargos": [
+                "Ministro dos Assuntos Parlamentares"
+            ]
+        },
+        {
+            "nome": "Teixeira dos Santos",
+            "cargos": [
+                "Ministro de Estado",
+                "Ministro das Finanças",
+                "Ministro da Economia e da Inovação"
+            ]
+        },
+        {
+            "nome": "Nuno Severiano Teixeira",
+            "cargos": [
+                "Ministro da Defesa Nacional"
+            ]
+        },
+        {
+            "nome": "Alberto Costa",
+            "cargos": [
+                "Ministro da Justiça"
+            ]
+        },
+        {
+            "nome": "Jaime Silva",
+            "cargos": [
+                "Ministro da Agricultura, do Desenvolvimento Rural e das Pescas"
+            ]
+        },
+        {
+            "nome": "José Vieira da Silva",
+            "cargos": [
+                "Ministro do Trabalho e da Solidariedade Social"
+            ]
+        },
+        {
+            "nome": "Maria de Lurdes Rodrigues",
+            "cargos": [
+                "Ministra da Educação"
+            ]
+        },
+        {
+            "nome": "José António Pinto Ribeiro",
+            "cargos": [
+                "Ministro da Cultura"
+            ]
+        }
+    ]
+}
