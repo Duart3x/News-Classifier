@@ -130,6 +130,17 @@ fig.set_xlabel('')
 fig.legend(labels=['Positive', 'Negative'])
 plt.show()
 
+# plot bar chart of sentiment distribution
+fig = df['sentiment'].value_counts().plot(kind='bar')
+fig.set_title('Sentiment Distribution')
+fig.set_ylabel('Count')
+fig.set_xlabel('Sentiment')
+# draw number of positive and negative counts on the bars
+for index, value in enumerate(df['sentiment'].value_counts()):
+    plt.text(index, value, str(value))
+
+plt.show()
+
 # %%
 # Get the most common Names of People in negative and positive texts
 
@@ -363,4 +374,54 @@ normalized_negative_counts = process_data(negative_people_names_counter)
 
 name_to_party = {row['depNomeParlamentar'].lower(): row['gpSigla']
                  for index, row in dp_df.iterrows()}
+
+
+# Initialize dictionaries to store the counts per party
+positive_articles_by_party = defaultdict(int)
+negative_articles_by_party = defaultdict(int)
+
+# Count positive articles per party
+for name, count in normalized_positive_counts:
+    if name in name_to_party:  # Check if the name exists in the mapping
+        party = name_to_party[name]
+        positive_articles_by_party[party] += count
+
+# Count negative articles per party
+for name, count in normalized_negative_counts:
+    if name in name_to_party:  # Check if the name exists in the mapping
+        party = name_to_party[name]
+        negative_articles_by_party[party] += count
+
+
+# Convert the dictionaries to DataFrame
+party_article_counts = pd.DataFrame({
+    'positive_articles': positive_articles_by_party,
+    'negative_articles': negative_articles_by_party
+}).reset_index()
+
+# Rename the columns for clarity
+party_article_counts.columns = ['gpSigla', 'positive_articles', 'negative_articles']
+sorted_party_article_counts = party_article_counts.sort_values(by=['positive_articles'], ascending=False)
+
+# %%
+
+# Plotting positive articles per party
+plt.figure(figsize=(10, 6))
+plt.bar(party_article_counts['gpSigla'], party_article_counts['positive_articles'], color='green')
+plt.xlabel('Party (gpSigla)')
+plt.ylabel('Number of Positive Articles')
+plt.title('Number of Positive Articles per Party')
+plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
+plt.tight_layout()  # Adjust layout to prevent clipping
+plt.show()
+
+# Plotting negative articles per party
+plt.figure(figsize=(10, 6))
+plt.bar(party_article_counts['gpSigla'], party_article_counts['negative_articles'], color='red')
+plt.xlabel('Party (gpSigla)')
+plt.ylabel('Number of Negative Articles')
+plt.title('Number of Negative Articles per Party')
+plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
+plt.tight_layout()  # Adjust layout to prevent clipping
+plt.show()
 
